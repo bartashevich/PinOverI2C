@@ -29,6 +29,10 @@ int PinOverI2C::read_i2c(uint8_t slave_address){
 	if(Wire.available()){
 		to_receive[0] = Wire.read();
 		to_receive[1] = Wire.read();
+
+		Serial.println(to_receive[0]);
+		Serial.println(to_receive[1]);
+		Serial.println();
 	}
 
 	return (int) (to_receive[0] * 100 + to_receive[1]);
